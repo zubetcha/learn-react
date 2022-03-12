@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Product } from "../../types";
 
 const ProductItem = ({
-  categoty,
+  category,
   // description,
   image,
   price,
@@ -13,7 +13,7 @@ const ProductItem = ({
   return (
     <li className="product-item">
       <Link to={`/products/${id}`}>
-        <p className="product-item__category">{categoty}</p>
+        <p className="product-item__category">{category}</p>
         <p className="product-item__title">{title}</p>
         {/* <p className="product-item__description">{description}</p> */}
         <img className="product-item__image" src={image} alt=""/>

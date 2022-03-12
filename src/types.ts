@@ -4,7 +4,7 @@ export type Rating = {
 }
 
 export type Product = {
-  categoty: string;
+  category: string;
   description: string;
   id: number;
   image: string;

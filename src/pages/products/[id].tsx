@@ -1,16 +1,36 @@
 import { useQuery } from "react-query"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
+import ProductDetail from "../../components/product/detail"
 import { fetcher, QueryKeys } from "../../queryClient"
 import { Product } from "../../types"
 
-const ProductDetail = () => {
-  const id = useParams()
+const ProductDetailPage = () => {
+  const {id} = useParams()
   const {data} = useQuery<Product>([QueryKeys.PRODUCTS, id], () => fetcher({
     method: 'GET',
-    path: '/products',
+    path: `/products/${id}`,
   }))
 
-  return <div>상세 페이지</div>
+  if (!data) return null;
+
+  const {
+    category,
+    title,
+    description,
+    image,
+    price,
+    rating: {
+      rate,
+      count,
+    }
+  } = data
+
+  return (
+    <div>
+      <h2>상품상세</h2>
+      <ProductDetail item={data} />
+    </div>
+  )
 }
 
-export default ProductDetail
+export default ProductDetailPage
