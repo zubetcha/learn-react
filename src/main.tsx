@@ -5,7 +5,9 @@ import { BrowserRouter } from 'react-router-dom';
 
 import './scss/index.scss'
 
-
+if (import.meta.env.DEV) {
+ import('./mocks/browser').then(({worker}) => worker.start())
+}
 
 ReactDOM.render(
   <React.StrictMode>
