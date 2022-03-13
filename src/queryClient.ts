@@ -22,7 +22,7 @@ export const getClient = (() => {
   }
 })()
 
-const BASE_URL = 'https://fakestoreapi.com';
+const BASE_URL = '/';
 
 // Fetcher
 export const restFetcher = async({
