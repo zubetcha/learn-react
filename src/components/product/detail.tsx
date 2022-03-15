@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { PRODUCT } from "../../graphql/products";
-import { Product } from "../../types";
+// import { Product } from "../../types";
 
 const ProductDetail = ({
   item: {
